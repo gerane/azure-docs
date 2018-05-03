@@ -57,6 +57,7 @@ $AutomationAccountName = ""
 $AutomationAccountResourceGroup = ""
 
 # fill in the name of a Node Configuration in Azure Automation DSC, for this VM to conform to
+# NOTE: Config names are case sensitive in the portal.
 $NodeConfigName = ""
 
 # get Azure Automation DSC registration info
@@ -106,6 +107,9 @@ $VM = Set-AzureVMExtension `
 
 $VM | Update-AzureVM
 ```
+
+> [!NOTE]
+> Dsc Node Configuration names are case sensitive in the portal. If the case is mismatched the node with not show up under DSC Nodes.
 
 ## Azure virtual machines
 
